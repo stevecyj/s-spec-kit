@@ -1,0 +1,78 @@
+:root {
+  --color-bg: #f4efe6;
+  --color-surface: #fffdf8;
+  --color-ink: #1c1915;
+  --color-muted: #4e4942;
+  --color-line: #ddd4c6;
+  --color-accent: #0f5c45;
+  --color-accent-strong: #0b4634;
+  --color-on-accent: #ffffff;
+  --color-danger: #8d1d32;
+  --color-danger-bg: #fdecef;
+  --color-info-bg: #e7f3ee;
+  --color-focus: #0b57d0;
+  --shadow-card: 0 10px 30px rgb(40 32 20 / 8%);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --font: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Source Han Serif TC', 'Noto Serif TC',
+    PMingLiU, serif;
+  --font-ui: 'Avenir Next', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  font-family: var(--font-ui);
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-ink);
+  background:
+    radial-gradient(circle at top left, rgb(255 255 255 / 70%), transparent 32rem),
+    var(--color-bg);
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+build/
+coverage/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.specify/
+.agents/
+.claude/
+.opencode/
+specs/
+.git/
+playwright-report/
+test-results/
+backend/uploads/

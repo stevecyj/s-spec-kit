@@ -1,0 +1,18 @@
+{
+  "name": "photo-album-organizer-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "happy-dom": "^20.0.10",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>照片相簿</title>
+    <meta name="description" content="依年月分組整理單層相簿，並以平鋪縮圖與拖放調整照片順序。" />
+  </head>
+  <body>
+    <a class="skip-link" href="#date-groups">跳至相簿內容</a>
+    <header class="app-header">
+      <div class="app-header__inner">
+        <div>
+          <p class="eyebrow">單層相簿</p>
+          <h1>照片相簿</h1>
+        </div>
+        <div class="app-header__actions">
+          <button type="button" id="create-album-button" data-testid="create-album">新增相簿</button>
+          <button type="button" id="import-photos-button" class="button-primary" data-testid="import-photos">
+            匯入照片
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="date-groups" class="date-groups" aria-busy="false" data-testid="date-groups"></main>
+    <div id="dialog-root"></div>
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-relevant="additions"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+CREATE TABLE IF NOT EXISTS albums (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(120) NOT NULL,
+  album_date DATE NOT NULL,
+  is_collapsed TINYINT(1) NOT NULL DEFAULT 0,
+  sort_order INT NOT NULL DEFAULT 0,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_albums_date_sort (album_date DESC, sort_order ASC, id DESC)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS photos (
+  id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  album_id INT UNSIGNED NOT NULL,
+  original_filename VARCHAR(255) NOT NULL,
+  stored_filename VARCHAR(255) NOT NULL UNIQUE,
+  thumbnail_filename VARCHAR(255) NOT NULL,
+  mime_type VARCHAR(50) NOT NULL,
+  file_size_bytes INT UNSIGNED NOT NULL,
+  width INT UNSIGNED NULL,
+  height INT UNSIGNED NULL,
+  taken_at DATETIME NOT NULL,
+  sort_order INT NOT NULL DEFAULT 0,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY uk_photos_stored_filename (stored_filename),
+  INDEX idx_photos_album_sort (album_id, sort_order ASC, id ASC),
+  CONSTRAINT fk_photos_album_id FOREIGN KEY (album_id) REFERENCES albums (id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,25 @@
+{
+  "name": "photo-album-organizer-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "db:init": "node src/config/db.js --init",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.3",
+    "sharp": "^0.34.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.1.4",
+    "vitest": "^3.2.4"
+  }
+}
